@@ -34,7 +34,7 @@ const ProductPage = (props) => {
                     page.banners && page.banners.map((banner, index) =>
                         <a
                             key={index}
-                            style={{ display: 'block' }}
+                            style={{ display: 'block', height: '300px' }}
                             href={banner.navigateTo}
                         >
                             <img src={banner.img} alt="" />
