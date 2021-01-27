@@ -68,14 +68,6 @@ const ProductPage = (props) => {
                                 width: '100%',
                                 height: '100%'
                             }} src={"https://rukminim1.flixcart.com/flap/1800/1800/image/fa2b751b0620b47c.jpg?q=80"} alt="" />
-                                <img style={{
-                                width: '100%',
-                                height: '100%'
-                            }} src={"https://rukminim1.flixcart.com/flap/1800/1800/image/fa2b751b0620b47c.jpg?q=80"} alt="" />
-                                <img style={{
-                                width: '100%',
-                                height: '100%'
-                            }} src={"https://rukminim1.flixcart.com/flap/1800/1800/image/fa2b751b0620b47c.jpg?q=80"} alt="" />
                         </Card>
                     )
                 }
