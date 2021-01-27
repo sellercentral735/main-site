@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { getOrder } from "../../actions";
 import Layout from "../../components/Layout";
 import Card from "../../components/UI/Card";
-import { generatePublicUrl } from "../../urlConfig";
 import Price from "../../components/UI/Price";
 import "./style.css";
 
@@ -92,9 +91,7 @@ const OrderDetailsPage = (props) => {
             <div className="flexRow">
               <div className="delItemImgContainer">
                 <img
-                  src={generatePublicUrl(item.productId.productPictures[0].img)}
-                  alt=""
-                />
+                  src={item.productId.productPictures[0].img} alt="" />
               </div>
               <div style={{ width: "250px" }}>
                 <div className="delItemName">{item.productId.name}</div>
