@@ -37,13 +37,7 @@ const ProductPage = (props) => {
                             style={{ display: 'block', height: '300px' }}
                             href={banner.navigateTo}
                         >
-                            <img src={"https://rukminim1.flixcart.com/flap/1800/1800/image/9fddb61f281042c8.jpg?q=80"} alt="" /></a>
-                            <a
-                            key={index}
-                            style={{ display: 'block', height: '300px' }}
-                            href={banner.navigateTo}
-                        >
-                                <img src={"https://rukminim1.flixcart.com/flap/1800/1800/image/76e02b73a6fd5aa7.jpg?q=80"} alt="" />
+                            <img src={"https://rukminim1.flixcart.com/flap/1800/1800/image/9fddb61f281042c8.jpg?q=80"} alt="" />
                         </a>
                     )
                 }
