@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react'
 // import Layout from '../../components/Layout';
 import Card from "../../../components/UI/Card";
 import { Link } from "react-router-dom";
-import { generatePublicUrl } from '../../../urlConfig';
 import { useDispatch, useSelector } from 'react-redux';
 import { getProductsBySlug } from '../../../actions';
 import { MaterialButton } from '../../../components/MaterialUI';
@@ -66,7 +65,7 @@ const ProductStore = (props) => {
                       className="productContainer"
                     >
                       <div className="productImgContainer">
-                        <img alt="#" src={generatePublicUrl(product.productPictures[0].img)} />
+                        <img alt="" src={product.productPictures[0].img} />
                       </div>
                       <div className="productInfo">
                         <div style={{ margin: '10px 0' }}>{product.name}</div>
