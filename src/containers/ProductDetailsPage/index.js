@@ -2,16 +2,11 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { addToCart, getProductDetailsById } from '../../actions';
 import Layout from '../../components/Layout';
-import {
-  IoIosArrowForward,
-  IoIosStar,
-  IoMdCart
-} from 'react-icons/io';
+import { IoIosArrowForward, IoIosStar, IoMdCart } from 'react-icons/io';
 import { BiRupee } from 'react-icons/bi';
 import { AiFillThunderbolt } from 'react-icons/ai';
 import { MaterialButton } from '../../components/MaterialUI';
 import './style.css';
-import { generatePublicUrl } from '../../urlConfig';
 
 
 /**
@@ -22,16 +17,16 @@ import { generatePublicUrl } from '../../urlConfig';
 const ProductDetailsPage = (props) => {
 
   const dispatch = useDispatch();
-  const product = useSelector(state => state.product);
+  const product = useSelector((state) => state.product);
 
   useEffect(() => {
     const { productId } = props.match.params;
     console.log(props);
     const payload = {
       params: {
-        productId
-      }
-    }
+        productId,
+      },
+    };
     dispatch(getProductDetailsById(payload));
   }, []);
 
@@ -45,10 +40,9 @@ const ProductDetailsPage = (props) => {
       <div className="productDescriptionContainer">
         <div className="flexRow" style={{display: 'flex'}}>
         <div className="verticalImageStack">
-          {
-            product.productDetails.productPictures.map((thumb, index) =>
+          {product.productDetails.productPictures.map((thumb, index) =>
               <div className="thumbnail">
-                <img src={generatePublicUrl(thumb.img)} alt={thumb.img} />
+                <img src={thumb.img} alt={thumb.img} />
               </div>
             )
           }
@@ -61,7 +55,10 @@ const ProductDetailsPage = (props) => {
         </div>
         <div className="productDescContainer">
           <div className="productDescImgContainer">
-            <img src={generatePublicUrl(product.productDetails.productPictures[0].img)} alt={`${product.productDetails.productPictures[0].img}`} />
+            <img
+                src={product.productDetails.productPictures[0].img}
+                alt={`${product.productDetails.productPictures[0].img}`}
+              />
           </div>
 
           {/* action buttons */}
@@ -72,7 +69,7 @@ const ProductDetailsPage = (props) => {
                 bgColor="#ff9f00"
                 textColor="#ffffff"
                 style={{
-                  marginRight: '5px',
+                  marginRight: "5px",
                   width: "50%"
                 }}
                 icon={<IoMdCart style={{
@@ -92,7 +89,7 @@ const ProductDetailsPage = (props) => {
               bgColor="#fb641b"
               textColor="#ffffff"
               style={{
-                marginLeft: '5px',
+                marginLeft: "5px",
                 width: "50%"
               }}
               icon={<AiFillThunderbolt  
@@ -109,10 +106,21 @@ const ProductDetailsPage = (props) => {
           {/* home > category > subCategory > productName */}
           <div className="breed">
             <ul>
-              <li><a href="#">Home</a><IoIosArrowForward /></li>
-              <li><a href="#">Mobiles</a><IoIosArrowForward /></li>
-              <li><a href="#">Samsung</a><IoIosArrowForward /></li>
-              <li><a href="#">{product.productDetails.name}</a></li>
+              <li>
+                <a href="#">Home</a>
+                <IoIosArrowForward />
+              </li>
+              <li>
+                <a href="#">Mobiles</a>
+                <IoIosArrowForward />
+              </li>
+              <li>
+                <a href="#">Samsung</a>
+                <IoIosArrowForward />
+              </li>
+              <li>
+                <a href="#">{product.productDetails.name}</a>
+              </li>
             </ul>
           </div>
           {/* product description */}
@@ -122,7 +130,8 @@ const ProductDetailsPage = (props) => {
               <span className="ratingCount">4.3 <IoIosStar /></span>
               <span className="ratingNumbersReviews">72,234 Ratings & 8,140 Reviews</span>
             </div>
-            <div className="extraOffer">Extra <BiRupee />4500 off </div>
+            <div className="extraOffer">
+              Extra <BiRupee />4500 off </div>
             <div className="flexRow priceContainer">
               <span className="price"><BiRupee />{product.productDetails.price}</span>
               <span className="discount" style={{ margin: '0 10px' }}>22% off</span>
@@ -154,8 +163,7 @@ const ProductDetailsPage = (props) => {
         </div>
       </div>
     </Layout>
-  )
-
-}
+  );
+};
 
 export default ProductDetailsPage
