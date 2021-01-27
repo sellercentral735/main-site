@@ -2,11 +2,9 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Layout from "../../components/Layout";
 import Card from "../../components/UI/Card";
-import { generatePublicUrl } from "../../urlConfig";
 import CartItem from "./CartItem";
 import { addToCart, getCartItems, removeCartItem } from "../../actions";
 import PriceDetails from "../../components/PriceDetails";
-
 import "./style.css";
 import { MaterialButton } from "../../components/MaterialUI";
 
